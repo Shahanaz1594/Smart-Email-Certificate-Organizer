@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Certificate Emails</title>
+  <style>
+    body { font-family: Arial; background-color: #f0f0f0; padding: 20px; }
+    .email-box {
+      background-color: white;
+      margin: 15px auto;
+      padding: 15px;
+      border-radius: 10px;
+      width: 80%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    h3 { color: #333; }
+    a.download-link {
+      display: inline-block;
+      margin: 5px;
+      padding: 6px 12px;
+      background: #4CAF50;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    a.download-link:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Your Certificate Emails 📩</h1>
+  {% for email in emails %}
+    <div class="email-box">
+      <h3>From: {{ email.from }}</h3>
+      <p><strong>Subject:</strong> {{ email.subject }}</p>
+      <p><strong>Preview:</strong> {{ email.preview }}</p>
+      <p><strong>Date:</strong> {{ email.date }}</p>
+      <p><strong>Attachments:</strong></p>
+      <ul>
+        {% for att in email.attachments %}
+          <li><a class="download-link" href="{{ att.url }}" target="_blank">{{ att.filename }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endfor %}
+</body>
+</html>
