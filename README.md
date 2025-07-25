@@ -9,11 +9,11 @@ This project is a smart web app that connects to your Gmail account, filters cer
 - Filters all document-related emails such as doc.pdf,doc.ppt, doc.png, word.doc etc.
 - Displays email metadata (from, subject, preview, date)
 - Allows downloading attachments (PDF, images, etc.)
-- Clean UI with Flask and Jinja2 templates
+- Clean UI with Flask.
 
 ## 🛠️Tech Stack
 
-- **Frontend**: HTML, CSS, Jinja2 (Flask templates)
+- **Frontend**: HTML, CSS
 - **Backend**: Python, Flask
 - **APIs**: Google Gmail API, OAuth2
 - **Other**: JSON, MIME parsing, file I/O
